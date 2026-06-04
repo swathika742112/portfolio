@@ -1,0 +1,29 @@
+# Dependencies
+web/node_modules/
+api/node_modules/
+
+# Build output
+web/dist/
+api/dist/
+
+# Environment files (keep .env.example, ignore real .env)
+api/.env
+web/.env
+.env
+
+# Database
+api/prisma/dev.db
+api/prisma/dev.db-journal
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*

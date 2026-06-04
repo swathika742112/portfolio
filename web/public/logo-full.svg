@@ -1,0 +1,62 @@
+<svg viewBox="0 0 440 110" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="blueG" x1="0" y1="0" x2="80" y2="55" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1e40af"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="orangeG" x1="100" y1="55" x2="20" y2="110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f97316"/>
+      <stop offset="1" stop-color="#dc2626"/>
+    </linearGradient>
+    <linearGradient id="nameG" x1="120" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#bae6fd"/>
+    </linearGradient>
+    <clipPath id="topClip">
+      <rect x="0" y="0" width="100" height="55"/>
+    </clipPath>
+    <clipPath id="botClip">
+      <rect x="0" y="55" width="100" height="55"/>
+    </clipPath>
+    <filter id="bgGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="nameGlow" x="-5%" y="-30%" width="110%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Glow blobs (icon area) -->
+  <ellipse cx="40" cy="38" rx="28" ry="32" fill="#1d4ed8" opacity="0.18" filter="url(#bgGlow)"/>
+  <ellipse cx="58" cy="80" rx="24" ry="22" fill="#f97316"  opacity="0.22" filter="url(#bgGlow)"/>
+
+  <!-- S icon -->
+  <path clip-path="url(#topClip)"
+    d="M68 20 C68 12 60 8 50 8 C36 8 22 15 22 29 C22 43 38 48 52 53 C62 57 76 62 78 74"
+    stroke="url(#blueG)" stroke-width="17" stroke-linecap="round" fill="none"/>
+  <path clip-path="url(#botClip)"
+    d="M22 29 C22 43 38 48 52 53 C66 58 78 64 78 78 C78 92 64 101 50 101 C36 101 22 95 22 86"
+    stroke="url(#orangeG)" stroke-width="17" stroke-linecap="round" fill="none"/>
+
+  <!-- Tech dots -->
+  <circle cx="87" cy="24" r="4.5" fill="#06b6d4"/>
+  <circle cx="92" cy="47" r="5.5" fill="#06b6d4" opacity="0.75"/>
+  <circle cx="88" cy="70" r="4"   fill="#f97316"/>
+  <line x1="87" y1="29" x2="88" y2="41" stroke="#06b6d4" stroke-width="1.5" opacity="0.45" stroke-linecap="round"/>
+  <line x1="90" y1="53" x2="89" y2="65" stroke="#06b6d4" stroke-width="1.5" opacity="0.35" stroke-linecap="round"/>
+
+  <!-- Name text -->
+  <text x="118" y="66"
+    font-family="Inter, system-ui, sans-serif"
+    font-size="46" font-weight="800" letter-spacing="-1.5"
+    fill="url(#nameG)" filter="url(#nameGlow)">Swathika</text>
+
+  <!-- — PORTFOLIO — -->
+  <line x1="118" y1="82" x2="148" y2="82" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="154" y="87"
+    font-family="Inter, system-ui, sans-serif"
+    font-size="12" font-weight="600" letter-spacing="4.5"
+    fill="#06b6d4">PORTFOLIO</text>
+  <line x1="296" y1="82" x2="326" y2="82" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ══════════════════════════════════════════
+   DARK THEME  (default)  — Cyan & Blue
+   ══════════════════════════════════════════ */
+:root {
+  --color-bg:          #020817;
+  --color-surface:     #0f172a;
+  --color-surface-2:   #1e293b;
+  --color-border:      #1e293b;
+  --color-accent:      #06b6d4;   /* cyan-500  */
+  --color-accent-2:    #3b82f6;   /* blue-500  */
+  --color-accent-hover:#0891b2;   /* cyan-600  */
+  --color-primary:     #f0f9ff;
+  --color-secondary:   #94a3b8;
+  --color-muted:       #475569;
+  --glass-rgb:         2,8,23;
+}
+
+/* ══════════════════════════════════════════
+   LIGHT THEME  — Cyan & Blue
+   ══════════════════════════════════════════ */
+:root.light {
+  --color-bg:          #f0f9ff;
+  --color-surface:     #ffffff;
+  --color-surface-2:   #e0f2fe;
+  --color-border:      #bae6fd;
+  --color-accent:      #0284c7;   /* sky-600   */
+  --color-accent-2:    #2563eb;   /* blue-600  */
+  --color-accent-hover:#0369a1;
+  --color-primary:     #0c1445;
+  --color-secondary:   #334155;
+  --color-muted:       #64748b;
+  --glass-rgb:         240,249,255;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
+
+  body {
+    @apply bg-bg text-primary font-sans antialiased;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-bg);
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-muted);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  /* ── Gradient text ── */
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 50%, var(--color-accent-2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Accent gradient background ── */
+  .bg-accent-gradient {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+  }
+
+  /* ── Glassmorphism navbar ── */
+  .glass {
+    background: rgba(var(--glass-rgb), 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  /* ── Glowing card border ── */
+  .card-glow:hover {
+    box-shadow: 0 0 0 1px var(--color-accent),
+                0 8px 32px rgba(6,182,212,0.15);
+  }
+
+  /* ── Ambient glow blob ── */
+  .glow-blob {
+    background: radial-gradient(ellipse, var(--color-accent) 0%, var(--color-accent-2) 50%, transparent 70%);
+    filter: blur(80px);
+    opacity: 0.12;
+  }
+
+  .glow-blob-2 {
+    background: radial-gradient(ellipse, var(--color-accent-2) 0%, var(--color-accent) 50%, transparent 70%);
+    filter: blur(100px);
+    opacity: 0.08;
+  }
+
+  /* ── Section divider ── */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+  }
+
+  /* ── Responsive padding ── */
+  .section-padding {
+    @apply py-20 px-4 sm:py-28 sm:px-6 lg:py-32;
+  }
+}
+
+/* ── Mobile ── */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+@media (max-width: 640px) {
+  button, a { min-height: 44px; }
+}
+
+@media (hover: hover) {
+  .hover-lift:hover { transform: translateY(-4px); }
+}

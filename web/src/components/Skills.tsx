@@ -12,7 +12,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   State:             '#10b981',   // emerald
   'Version Control': '#f59e0b',   // amber
   Database:          '#ec4899',   // pink
-  Tools:             '#64748b',   // slate
+  Tools:             '#0ea5e9',   // sky blue
 }
 
 export default function Skills() {

@@ -122,6 +122,20 @@
   .section-padding {
     @apply py-20 px-4 sm:py-28 sm:px-6 lg:py-32;
   }
+
+  /* ── Input focus glow ── */
+  input:focus, textarea:focus {
+    box-shadow: 0 0 0 3px rgba(6,182,212,0.12);
+  }
+
+  /* ── Smooth card lift ── */
+  .card-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  }
 }
 
 /* ── Mobile ── */
@@ -129,6 +143,9 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 @media (max-width: 640px) {
   button, a { min-height: 44px; }
+
+  h1 { line-height: 1.1; }
+  h2 { line-height: 1.15; }
 }
 
 @media (hover: hover) {

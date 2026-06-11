@@ -40,7 +40,7 @@ export default function Footer() {
             {/* Brand column */}
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3">
-                <img src="/logo.svg" alt="Logo" className="w-10 h-10 object-contain" />
+                <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="Logo" className="w-10 h-10 object-contain" />
                 <div>
                   <p className="font-bold text-base text-primary leading-tight">Swathika</p>
                   <p className="font-mono text-[10px] text-accent tracking-[0.2em] uppercase">Portfolio</p>

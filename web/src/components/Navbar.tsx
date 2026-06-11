@@ -47,7 +47,7 @@ export default function Navbar() {
             whileTap={{ scale: 0.94 }}
           >
             {/* SVG logo mark */}
-            <img src="/logo.svg" alt="S" className="w-9 h-9 object-contain" />
+            <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="S" className="w-9 h-9 object-contain" />
             {/* Name + subtitle */}
             <div className="flex flex-col leading-none">
               <span className="font-bold text-sm text-primary tracking-tight">Swathika</span>

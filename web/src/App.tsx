@@ -39,7 +39,7 @@ function Loader() {
     >
       {/* Animated logo */}
       <motion.img
-        src="/logo-full.svg"
+        src={`${import.meta.env.BASE_URL}logo-full.svg`}
         alt="Swathika Portfolio"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}

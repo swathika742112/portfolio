@@ -19,11 +19,12 @@ export default function Projects() {
           initial={{ opacity: 0, x: -30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-4 mb-6"
+          className="mb-4"
         >
-          <span className="font-mono text-accent text-sm">03.</span>
-          <h2 className="text-3xl font-bold">Projects</h2>
-          <span className="flex-1 h-px bg-border max-w-xs" />
+          <p className="font-mono text-accent text-xs tracking-[0.3em] uppercase mb-3">03 — Projects</p>
+          <h2 className="text-4xl sm:text-5xl font-black tracking-tight leading-tight">
+            What I've <span className="text-gradient">Built</span>
+          </h2>
         </motion.div>
 
         <motion.p
@@ -45,19 +46,25 @@ export default function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.45, delay: i * 0.07 }}
-                className="group relative bg-surface border border-border rounded-2xl p-6 flex flex-col overflow-hidden hover:-translate-y-1.5 transition-all duration-300 hover:shadow-lg"
-                style={{ '--project-color': project.color } as React.CSSProperties}
+                className="group relative bg-surface border border-border rounded-2xl flex flex-col overflow-hidden hover:-translate-y-2 transition-all duration-300"
+                style={{
+                  '--project-color': project.color,
+                  boxShadow: 'none',
+                } as React.CSSProperties}
+                whileHover={{ boxShadow: `0 8px 40px ${project.color}22, 0 0 0 1px ${project.color}30` }}
               >
-                {/* Gradient top bar */}
+                {/* Color banner header */}
                 <div
-                  className="absolute top-0 left-0 right-0 h-[3px] transition-opacity duration-300 opacity-50 group-hover:opacity-100"
-                  style={{ background: `linear-gradient(90deg, ${project.color}, transparent)` }}
+                  className="h-1.5 w-full"
+                  style={{ background: `linear-gradient(90deg, ${project.color}, ${project.color}55)` }}
                 />
+
+                <div className="p-6 flex flex-col flex-1">
 
                 {/* Background glow on hover */}
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
-                  style={{ background: `radial-gradient(ellipse at top left, ${project.color}08 0%, transparent 60%)` }}
+                  style={{ background: `radial-gradient(ellipse at top left, ${project.color}10 0%, transparent 60%)` }}
                 />
 
                 {/* Header */}
@@ -106,6 +113,7 @@ export default function Projects() {
                       {tag}
                     </span>
                   ))}
+                </div>
                 </div>
               </motion.article>
             ))}

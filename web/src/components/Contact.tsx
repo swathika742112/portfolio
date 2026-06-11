@@ -35,11 +35,12 @@ export default function Contact() {
           initial={{ opacity: 0, x: -30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-4 mb-16"
+          className="mb-16"
         >
-          <span className="font-mono text-accent text-sm">05.</span>
-          <h2 className="text-3xl font-bold">Get In Touch</h2>
-          <span className="flex-1 h-px bg-border max-w-xs" />
+          <p className="font-mono text-accent text-xs tracking-[0.3em] uppercase mb-3">05 — Contact</p>
+          <h2 className="text-4xl sm:text-5xl font-black tracking-tight leading-tight">
+            Get In <span className="text-gradient">Touch</span>
+          </h2>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16">

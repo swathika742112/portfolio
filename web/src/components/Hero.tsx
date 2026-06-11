@@ -139,35 +139,70 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* ── Right: floating profile card ── */}
+        {/* ── Right: terminal card + stats ── */}
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
-          className="hidden lg:flex flex-col items-center gap-6"
+          className="hidden lg:flex flex-col items-center gap-5"
         >
-          {/* Avatar card */}
+          {/* Terminal / code card */}
           <motion.div
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            className="relative"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+            className="w-full max-w-[340px] bg-surface border border-border rounded-2xl overflow-hidden shadow-2xl"
           >
-            <div className="w-52 h-52 rounded-3xl bg-surface border border-border flex items-center justify-center overflow-hidden shadow-2xl">
-              {personalInfo.avatar ? (
-                <img src={personalInfo.avatar} alt={personalInfo.name} className="w-full h-full object-cover" />
-              ) : (
-                <span className="text-7xl font-black text-accent select-none">
-                  {personalInfo.name.split(' ').map(n => n[0]).join('')}
-                </span>
-              )}
+            {/* Traffic lights */}
+            <div className="flex items-center gap-1.5 px-4 py-3 bg-surface-2 border-b border-border">
+              <span className="w-3 h-3 rounded-full" style={{ background: '#ff5f57' }} />
+              <span className="w-3 h-3 rounded-full" style={{ background: '#febc2e' }} />
+              <span className="w-3 h-3 rounded-full" style={{ background: '#28c840' }} />
+              <span className="ml-auto font-mono text-[10px] text-muted">swathika.ts</span>
             </div>
-            {/* Gradient glow ring */}
-            <div className="absolute -inset-1 rounded-3xl pointer-events-none"
-              style={{ background: 'linear-gradient(135deg, var(--color-accent), var(--color-accent-2))', opacity: 0.15, filter: 'blur(12px)' }} />
+            {/* Code body */}
+            <div className="p-5 font-mono text-xs leading-[2] select-none">
+              <p>
+                <span className="text-blue-400">const </span>
+                <span className="text-accent">developer</span>
+                <span className="text-secondary"> = {'{'}</span>
+              </p>
+              <p className="pl-4">
+                <span className="text-green-400">name</span>
+                <span className="text-secondary">: </span>
+                <span className="text-amber-300">"Swathika"</span>
+                <span className="text-secondary">,</span>
+              </p>
+              <p className="pl-4">
+                <span className="text-green-400">role</span>
+                <span className="text-secondary">: </span>
+                <span className="text-amber-300">"Frontend Developer"</span>
+                <span className="text-secondary">,</span>
+              </p>
+              <p className="pl-4">
+                <span className="text-green-400">tech</span>
+                <span className="text-secondary">: [</span>
+              </p>
+              <p className="pl-8 text-amber-300">"React", "TypeScript",</p>
+              <p className="pl-8 text-amber-300">"Tailwind", "Redux"</p>
+              <p className="pl-4"><span className="text-secondary">],</span></p>
+              <p className="pl-4">
+                <span className="text-green-400">available</span>
+                <span className="text-secondary">: </span>
+                <span className="text-orange-400">true</span>
+              </p>
+              <p>
+                <span className="text-secondary">{'}'}</span>
+                <motion.span
+                  animate={{ opacity: [1, 0, 1] }}
+                  transition={{ duration: 1, repeat: Infinity }}
+                  className="inline-block ml-1 text-accent"
+                >▊</motion.span>
+              </p>
+            </div>
           </motion.div>
 
-          {/* Stat pills */}
-          <div className="flex flex-col gap-3 w-full max-w-[220px]">
+          {/* Stat grid */}
+          <div className="grid grid-cols-2 gap-3 w-full max-w-[340px]">
             {[
               { label: 'Experience', value: '2 Years' },
               { label: 'Companies', value: '2 Jobs' },
@@ -176,13 +211,13 @@ export default function Hero() {
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.7 + i * 0.1 }}
-                className="flex items-center justify-between bg-surface border border-border rounded-xl px-4 py-2.5 hover:border-accent/30 transition-colors"
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 + i * 0.08 }}
+                className="flex flex-col items-center bg-surface border border-border rounded-xl px-4 py-3 hover:border-accent/40 hover:bg-surface-2 transition-all duration-200"
               >
-                <span className="text-xs text-muted">{stat.label}</span>
                 <span className="text-sm font-bold text-accent">{stat.value}</span>
+                <span className="text-[10px] text-muted mt-0.5">{stat.label}</span>
               </motion.div>
             ))}
           </div>

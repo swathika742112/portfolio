@@ -13,11 +13,12 @@ export default function Experience() {
           initial={{ opacity: 0, x: -30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-4 mb-16"
+          className="mb-16"
         >
-          <span className="font-mono text-accent text-sm">04.</span>
-          <h2 className="text-3xl font-bold">Experience</h2>
-          <span className="flex-1 h-px bg-border max-w-xs" />
+          <p className="font-mono text-accent text-xs tracking-[0.3em] uppercase mb-3">04 — Experience</p>
+          <h2 className="text-4xl sm:text-5xl font-black tracking-tight leading-tight">
+            Work <span className="text-gradient">History</span>
+          </h2>
         </motion.div>
 
         {/* Timeline */}
@@ -48,7 +49,13 @@ export default function Experience() {
                   transition={{ duration: 0.4, delay: i * 0.15 + 0.3 }}
                 />
 
-                <div className="bg-surface border border-border rounded-2xl p-6 hover:border-accent/30 transition-colors">
+                <div className={`bg-surface border rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 ${i === 0 ? 'border-accent/40 shadow-[0_0_24px_var(--color-accent)12]' : 'border-border hover:border-accent/30'}`}>
+                  {i === 0 && (
+                    <span className="inline-flex items-center gap-1.5 text-[10px] font-mono text-green-400 border border-green-400/30 bg-green-400/10 px-2.5 py-1 rounded-full mb-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                      Current
+                    </span>
+                  )}
                   {/* Header row */}
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
                     <div>

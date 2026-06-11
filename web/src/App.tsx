@@ -10,6 +10,14 @@ import Experience from '@/components/Experience'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
+function Divider() {
+  return (
+    <div className="max-w-6xl mx-auto px-6">
+      <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+    </div>
+  )
+}
+
 function ScrollProgress() {
   const { scrollYProgress } = useScroll()
   const scaleX = useSpring(scrollYProgress, { stiffness: 200, damping: 30 })
@@ -77,10 +85,15 @@ export default function App() {
           <Navbar />
           <main>
             <Hero />
+            <Divider />
             <About />
+            <Divider />
             <Skills />
+            <Divider />
             <Projects />
+            <Divider />
             <Experience />
+            <Divider />
             <Contact />
           </main>
           <Footer />

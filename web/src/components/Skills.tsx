@@ -31,11 +31,12 @@ export default function Skills() {
           initial={{ opacity: 0, x: -30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-4 mb-6"
+          className="mb-4"
         >
-          <span className="font-mono text-accent text-sm">02.</span>
-          <h2 className="text-3xl font-bold">Skills</h2>
-          <span className="flex-1 h-px bg-border max-w-xs" />
+          <p className="font-mono text-accent text-xs tracking-[0.3em] uppercase mb-3">02 — Skills</p>
+          <h2 className="text-4xl sm:text-5xl font-black tracking-tight leading-tight">
+            My <span className="text-gradient">Toolkit</span>
+          </h2>
         </motion.div>
 
         <motion.p
@@ -86,8 +87,12 @@ export default function Skills() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.88 }}
                   transition={{ duration: 0.3, delay: i * 0.04 }}
-                  className="group bg-surface border border-border rounded-2xl p-5 hover:border-accent/40 transition-all duration-300 hover:-translate-y-1"
+                  className="group bg-surface border border-border rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1"
                   style={{ '--card-color': cardColor } as React.CSSProperties}
+                  whileHover={{
+                    borderColor: `${cardColor}60`,
+                    boxShadow: `0 4px 24px ${cardColor}20`,
+                  }}
                 >
                   {/* Top row */}
                   <div className="flex items-center justify-between mb-3">
